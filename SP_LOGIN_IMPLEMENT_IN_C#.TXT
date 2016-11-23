@@ -1,0 +1,13 @@
+
+try {
+OracleCommand comm = new OracleCommand("SP_LOGIN", conn);
+comm.Parameters.Add(':username', OracleDbType.Varchar2, 20);
+comm.Parameters[':username'].Value = TextBoxForUsername.Text;
+
+comm.Parameters.Add(':password', OracleDbType.Varchar2, 10);
+comm.Parameters['"password'].Value = TextBoxForPassword.Text;
+
+} catch (OtacleException e){
+	string err = e.Message;
+}
+
